@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Document</title>
+
+<style>
+
+@media (min-width: 481px) {
+    
+
+body {
+
+background-color: aqua;
+
+}
+div{
+    width:20%;
+    border:1px solid red
+}
+#onlydesktopView{
+    display: block;
+}
+#onlydesktopView{
+    background-color: pink;
+}
+.responsiveDiv{
+    float:left;
+    height: 50px;
+    border: 1px solid black;
+    box-sizing: border-box; 
+    background-color: magenta;
+}
+
+.classB{
+    border:1px solid brown;
+}
+}
+
+@media (max-width :480px) {
+
+body {
+
+background-color: rgb(255, 119, 0);
+
+}
+div{
+    width:100%;
+    border:1px solid blue
+}
+#onlydesktopView{
+    display: none;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+
+    <div class="responsiveDiv classB classC" id="div1"></div>
+    <div class="responsiveDiv classC" id="div2">div2</div>
+    <div class="responsiveDiv" id="onlydesktopView">hi there is no usage to use screen and in media query rule</div>
+<div class="responsiveDiv">div3</div>
+</body>
+
+</html>
