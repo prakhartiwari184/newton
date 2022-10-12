@@ -1,0 +1,36 @@
+The descendant selector matches all elements that are descendants of a specified element.
+space sperated
+example:
+div p {
+  background-color: yellow;
+}
+
+Child Selector (>)
+example 
+div > p {
+  background-color: yellow;
+}
+
+Adjacent Sibling Selector (+)
+The adjacent sibling selector is used to select an element that is directly after another specific element.
+
+Sibling elements must have the same parent element, and "adjacent" means "immediately following".
+
+div + p {
+  background-color: yellow;
+}
+
+General Sibling Selector (~)
+The general sibling selector selects all elements that are next siblings of a specified element.
+example
+
+div ~ p {
+  background-color: yellow;
+}
+
+
+Pseudo Classes
+
+Style an element when a user mouses over it
+Style visited and unvisited links differently
+Style an element when it gets focus
