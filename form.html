@@ -1,18 +1,69 @@
 <html>
+    <head>
+        <script>
+function nameInput(){
+    console.log("out of input ");
+}
+
+function namefocus(){
+    //document.getElementById("userName").style.background="red";
+    console.log("focus of input ");
+
+}
+function UserInput(){
+
+    console.log("user is entering some value");
+}
+function changeInput(){
+    var flag=document.getElementById("state").value;
+    console.log(flag);
+    if(flag=="Up"){
+        var str="<option value='kanpur'>kanpur</option>";
+        str+="<option value='Lucknow'>Lucknow</option>";
+    }
+    else if(flag=="Mp"){
+        var str="<option value='Bhopal'>Bhopal</option>";
+        str+="<option value='Indore'>Indore</option>";    
+    }
+    document.getElementById("city").innerHTML=str;
+}
+function submitForm(){
+    var userName=document.getElementById("userName");
+    var nameLabel=document.getElementById("nameLabel");
+    var rollLabel=document.getElementById("rollLabel");
+    var rollNumber=document.getElementById("rollNumber");
+    var city=document.getElementById("city");
+   
+    if(userName.value ==""){
+        nameLabel.style.display="block";
+    }else{
+        nameLabel.style.display="none";
+    }
+    if(rollNumber.value=="" || rollNumber.value.length!=4)
+    {
+        rollLabel.style.display="block";
+    }
+    else{
+        rollLabel.style.display="none";
+    }
+}
+        </script>
+    </head>
     <body>
-        <form method="POST" action="./test.php">
-            <lable for="name">Username</lable>
-            <input type="text" id="name"  required />
-            <lable for="phone">Phone</lable>
-            <input type="number" id="phone" />
-            <input type="email" />
-            <input type="password" required/>
-            <select><option>1.Option1</option>
-                <option>2.Option2</option>
-                <option>3.Option3</option></select>
-            <button>submit</button>
-            <input type="radio" value="Male"/><label >Male</label>
-            <input type="radio" value="Male"/><label >Fe-Male</label>
-        </form>
+        
+            <input type="text" value="" id="userName" placeholder="Enter your name"  onblur="nameInput()" onfocus="namefocus()" oninput="UserInput()"/>
+            <label id="nameLabel" style="color:red;display:none">Name should be Required</label>
+            <input type="number" value="" id="rollNumber" placeholder="Enter your roll number"/>
+            <label id="rollLabel" style="color:red;display:none">Roll number should not be empty and it should be of 4 digits</label>
+            <select id="state" onchange="changeInput()">
+                <option value="">No value</option>
+                <option value="Up">Up</option>
+                <option value="Mp">Mp</option>
+            </select>
+            <select id="city">
+               
+            </select>
+            <button onclick="submitForm()">submit</button>
+       
     </body>
-</html>
+</html> 

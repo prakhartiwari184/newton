@@ -1,0 +1,31 @@
+<html>
+    <head>
+       
+    </head>
+    <body>
+        <div id="parent"></div>
+        <div class="classA">Div1</div>
+        <div class="classA">Div2</div>
+        <div class="classA">Div3</div>
+        <div class="classB">Div4</div>
+        <script>
+          /* var str="<ul>";
+           for(var i=1;i<=6;i++){
+               console.log(str);
+            str=str+"<li>"+i+"</li>";// dynamic element creation
+           }
+          str=str+"</ul>";
+          document.getElementById("parent").innerHTML=str;
+          document.getElementById("parent").style.color="red";
+          console.log(document.getElementById("parent").innerHTML);
+*/
+          var arr=document.getElementsByClassName("classA");
+          console.log(arr);
+          for(var i=0;i<arr.length;i++){
+              console.log(arr[i]);
+              arr[i].innerHTML+="red";
+          }
+                    </script>
+    </body>
+
+</html>
