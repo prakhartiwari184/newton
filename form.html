@@ -1,8 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+       
         <script>
-function nameInput(){
-    console.log("out of input ");
+            function abc(){
+    const xttp=new XMLHttpRequest();
+    
+    xttp.onreadystatechange=function(){
+        if (this.readyState==4 && this.status==200){
+            console.log("hi",this.responseText);// response send by server
+            renderData(this.responseText);
+        }
+    }
+    //xttp.setRequestHeader("Content-type","application/json")
+    xttp.open("GET","https://jsonplaceholder.typicode.com/todos/1",true); // request by a client 
+    // url 
+    xttp.send();
+}
+function renderData(data){
+
+}
+abc();
+function nameInput(event){
+    console.log("out of input ",event.target.value);
 }
 
 function namefocus(){
@@ -10,13 +30,14 @@ function namefocus(){
     console.log("focus of input ");
 
 }
-function UserInput(){
+function userInput(e){
 
-    console.log("user is entering some value");
+    console.log("user is entering some value",e.target.value);
 }
-function changeInput(){
+function changeInput(event){
+    console.log(event);
     var flag=document.getElementById("state").value;
-    console.log(flag);
+    //console.log(flag);
     if(flag=="Up"){
         var str="<option value='kanpur'>kanpur</option>";
         str+="<option value='Lucknow'>Lucknow</option>";
@@ -51,11 +72,11 @@ function submitForm(){
     </head>
     <body>
         
-            <input type="text" value="" id="userName" placeholder="Enter your name"  onblur="nameInput()" onfocus="namefocus()" oninput="UserInput()"/>
+            <input type="text"  id="userName" placeholder="Enter your name"  onblur="abc()" onfocus="namefocus()" oninput="userInput(event)"/>
             <label id="nameLabel" style="color:red;display:none">Name should be Required</label>
             <input type="number" value="" id="rollNumber" placeholder="Enter your roll number"/>
             <label id="rollLabel" style="color:red;display:none">Roll number should not be empty and it should be of 4 digits</label>
-            <select id="state" onchange="changeInput()">
+            <select id="state" onchange="changeInput(id)">
                 <option value="">No value</option>
                 <option value="Up">Up</option>
                 <option value="Mp">Mp</option>
